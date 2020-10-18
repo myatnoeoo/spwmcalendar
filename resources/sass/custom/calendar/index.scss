@@ -6,22 +6,22 @@
         .col{
             padding: 0;
             &.sidebar{
-                padding: 1rem;
+                padding: 0.5rem;
             }
         }
     }
     .sidebar{
-        background-color: $sidebar-bg;
+        // background-color: $sidebar-bg;
         .nav{
             display: grid;
             grid-template-columns: 20% 54% 25%;
             padding: 5px 0 0 0;
-            margin: 0 0 5px 0;
-            background: $sidebar-light;
+            margin: 0 0 7px 0;
+            // background: $sidebar-light;
             .profile{
                 width: 70%;
                 border-radius: 25px;
-                margin: 5px 0 7px 5px;
+                margin: 0px 0 0px 9px;
             }
             span{
                 text-align: left;
@@ -80,10 +80,12 @@
     }
     .content{
         height: 100%;
+        padding: 1rem;
         .header{
             display: grid;
             grid-template-columns: 20% auto;
-            padding: 0.5rem;
+            height: 48px;
+            border-bottom: 1px solid $sidebar-light;
             .swith-week{
                 .title{
                     font-size: 1.3rem;
@@ -105,14 +107,39 @@
                 }
             }
         }
-        .schdule-list{
-            height: 100%;
-            display: grid;
-            grid-template-columns: 4% 14% 14% 14% 14% 14% 14% 14%;
-            .col{
-                height: 100%;
-                border: 1px solid $sidebar-light;
-                text-align: center;
+        .schdule-list-container{
+            .schdule-list{
+                display: grid;
+                grid-template-columns: 9% 13% 13% 13% 13% 13% 13% 13%;
+                &.label-list{
+                    height: 54px;
+                    .day-number{
+                        background: $blue;
+                        padding: 4px;
+                        border-radius: 25px;
+                        color: $white;
+                        font-size: 0.8rem;
+                    }
+                }
+                .col{
+                    height: 100%;
+                    border-left: 1px solid $sidebar-light;
+                    text-align: center;
+                    &.time-lists{
+                        .time-list{
+                            height: 78px;
+                            margin: 0;
+                            padding: 33px 0 0 0;
+                        }
+                    }
+                    &.time-slip{
+                        p{
+                            border-top: 1px solid $sidebar-light;
+                            height: 78px;
+                            margin: 0;
+                        }
+                    }
+                }
             }
         }
     }
