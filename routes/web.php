@@ -20,3 +20,8 @@ Route::get('/', function () {
 
 // @ Event Edit
 Route::get('/eventedit', 'EventeditController@edit')->name('event_edit');
+
+Route::get('calendar', function(){
+    return view('calendar');
+});
+
