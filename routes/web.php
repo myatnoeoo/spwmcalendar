@@ -21,3 +21,4 @@ Route::get('calendar', function(){
     return view('calendar');
 });
 //////
+Route::resource('blogs', 'BlogController');
