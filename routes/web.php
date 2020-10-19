@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+// @ Event Edit
+Route::get('/eventedit', 'EventeditController@edit')->name('event_edit');
