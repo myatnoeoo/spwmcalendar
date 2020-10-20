@@ -22,3 +22,5 @@ Route::get('calendar', function(){
 });
 //////
 Route::resource('blogs', 'BlogController');
+
+Route::resource('products', 'ProductController');
