@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSechduleGuestTable extends Migration
+class CreateTestUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateSechduleGuestTable extends Migration
      */
     public function up()
     {
-        Schema::create('sechdule_guest', function (Blueprint $table) {
+        Schema::create('test_users', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('sechdule_id');
-            $table->foreign('sechdule_id')->references('id')->on('sechdules')->onDelete('cascade');
+            $table->string('u_name');
+            $table->string('u_email')->unique();
+            $table->string('password');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateSechduleGuestTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sechdule_guest');
+        Schema::dropIfExists('users');
     }
 }

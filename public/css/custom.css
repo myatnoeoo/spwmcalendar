@@ -247,3 +247,12 @@ input {
   top: 1rem;
 }
 
+.guest-list {
+  display: none;
+}
+
+.guest-list span {
+  display: block;
+  text-align: left;
+}
+
