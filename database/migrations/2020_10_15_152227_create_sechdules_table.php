@@ -19,6 +19,8 @@ class CreateSechdulesTable extends Migration
             $table->text('meet_url');
             $table->text('description');
             $table->enum('location', ['Meeting Room', 'Kitchen'])->defautl("Meeting Room");
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->dateTime('date');
             $table->string('from_time');
             $table->string('to_time');

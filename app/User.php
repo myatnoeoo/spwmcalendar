@@ -2,18 +2,24 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Hash;
 
-class TestUser extends Model
+class User extends Authenticatable
 {
-    protected $table = 'test_users';
+    use Notifiable;
+
+    protected $table = 'users';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'u_name', 'u_email', 'password',
+        'name', 'email', 'password',
     ];
 
     /**

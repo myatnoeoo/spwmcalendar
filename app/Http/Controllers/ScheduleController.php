@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\ScheduleService;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\StoreScheduleRequest;
 
 class ScheduleController extends Controller
 {
@@ -32,9 +35,10 @@ class ScheduleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreScheduleRequest $request)
     {
-        dd($request->all());
+        $schedule = ScheduleService::store($request->validated());
+        return redirect()->route('schedules.index');
     }
 
     /**
@@ -83,6 +87,8 @@ class ScheduleController extends Controller
     }
 
     public function moreOptionCreate(Request $request){
-        return view("schedule");
+        return view("schedule")->with([
+            'request' => $request,
+        ]);;
     }
 }

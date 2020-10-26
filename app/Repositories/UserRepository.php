@@ -2,12 +2,12 @@
 
 namespace App\Repositories;
 
-use App\TestUser;
+use App\User;
 
 class UserRepository
 {
     public static function getAll()
     {
-        return TestUser::all();
+        return User::all();
     }
 }

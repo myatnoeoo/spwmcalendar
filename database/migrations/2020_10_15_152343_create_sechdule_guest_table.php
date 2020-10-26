@@ -15,6 +15,8 @@ class CreateSechduleGuestTable extends Migration
     {
         Schema::create('sechdule_guest', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('sechdule_id');
             $table->foreign('sechdule_id')->references('id')->on('sechdules')->onDelete('cascade');
             $table->timestamps();

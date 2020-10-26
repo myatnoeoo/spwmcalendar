@@ -30,3 +30,12 @@ Route::get('/eventedit/get-all-user', 'EventeditController@getAllUser')->name('e
 Route::get('calendar', function(){
     return view('calendar');
 });
+
+Route::resource('blogs', 'BlogController');
+
+Route::resource('products', 'ProductController');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

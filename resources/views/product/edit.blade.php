@@ -8,7 +8,9 @@
 </head>
 <body>
     <h1>Edit Products</h1>
-<form action="{{route('products.s')}}" method="POST">
+
+<form action="{{route('products.store')}}" method="POST">
+
         @csrf
         @method("PUT")
     <input type="text" name="name" id="" value="{{$product->name}}">
