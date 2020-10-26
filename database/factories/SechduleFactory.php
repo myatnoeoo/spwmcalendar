@@ -2,11 +2,11 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Sechdule;
+use App\Schedule;
 use App\User;
 use Faker\Generator as Faker;
 
-$factory->define(Sechdule::class, function (Faker $faker) {
+$factory->define(Schedule::class, function (Faker $faker) {
     return [
         'title' => $faker->name,
         'meet_url' => $faker->name,

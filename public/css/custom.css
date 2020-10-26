@@ -31,7 +31,7 @@
 }
 
 .calendar-container .sidebar .calendar {
-  background: #e0e0e6;
+  background: gray;
   width: 100%;
   height: 250px;
 }
@@ -43,7 +43,7 @@
 }
 
 .calendar-container .sidebar .search input {
-  border: 1px solid #619dab;
+  border: 1px solid #6cb2eb;
   width: 100%;
   text-align: left;
   border-bottom-right-radius: 25px;
@@ -53,7 +53,7 @@
 .calendar-container .sidebar .search i {
   font-size: 1.5rem;
   line-height: 30px;
-  background: #e0e0e6;
+  background: gray;
   padding: 1px 0 0 7px;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .calendar-container .sidebar .view-user .list {
-  border: 1px solid #e0e0e6;
+  border: 1px solid gray;
   padding: 7px 0 0 14px;
   margin: 6px 0 0 0;
 }
@@ -96,7 +96,7 @@
   display: grid;
   grid-template-columns: 20% auto;
   height: 48px;
-  border-bottom: 1px solid #e0e0e6;
+  border-bottom: 1px solid gray;
 }
 
 .calendar-container .content .header .swith-week .title {
@@ -115,7 +115,7 @@
   border-radius: 6px;
   height: 34px;
   background: transparent;
-  border: 1px solid #e0e0e6;
+  border: 1px solid gray;
 }
 
 .calendar-container .content .schdule-list-container .schdule-list {
@@ -128,7 +128,7 @@
 }
 
 .calendar-container .content .schdule-list-container .schdule-list.label-list .day-number {
-  background: #3368ce;
+  background: #3490dc;
   padding: 4px;
   border-radius: 25px;
   color: white;
@@ -137,7 +137,7 @@
 
 .calendar-container .content .schdule-list-container .schdule-list .col {
   height: 100%;
-  border-left: 1px solid #e0e0e6;
+  border-left: 1px solid gray;
   text-align: center;
 }
 
@@ -148,13 +148,13 @@
 }
 
 .calendar-container .content .schdule-list-container .schdule-list .col.time-slip div {
-  border-top: 1px solid #e0e0e6;
+  border-top: 1px solid gray;
   height: 78px;
   margin: 0;
 }
 
 .calendar-container .content .schdule-list-container .schdule-list .col.time-slip div .schdule-item {
-  background: #3368ce;
+  background: #3490dc;
   border-radius: 7px;
   height: auto;
 }
@@ -254,5 +254,75 @@ input {
 .guest-list span {
   display: block;
   text-align: left;
+}
+
+.modal-dialog {
+  width: 350px !important;
+}
+
+.modal-dialog .modal-content .modal-header {
+  padding: 10px !important;
+}
+
+.modal-dialog .modal-content .modal-body {
+  padding: 1rem !important;
+}
+
+.modal-dialog .modal-content .modal-body form input {
+  width: 100%;
+  text-align: left;
+  border: 1px solid #968d8d;
+  border-radius: 10px;
+  padding: 4px 2px 4px 10px;
+  margin: 5px 0 5px 0;
+}
+
+.modal-dialog .modal-content .modal-body form .select-time-div {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  -moz-column-gap: 1.3rem;
+       column-gap: 1.3rem;
+  margin: 5px 0 5px 0;
+}
+
+.modal-dialog .modal-content .modal-body form .select-time-div .select-time {
+  display: flex;
+}
+
+.modal-dialog .modal-content .modal-body form .select-time-div .select-time span {
+  font-size: 1.2rem;
+  position: relative;
+  margin: 5px 8px 0 0;
+}
+
+.modal-dialog .modal-content .modal-body form .select-time-div .select-time select {
+  width: 77px;
+  height: 25px;
+  font-size: 1.3rem;
+  border-radius: 6px;
+  background: #ebebff;
+}
+
+.modal-dialog .modal-content .modal-body form .select-meet-place {
+  margin: 5px 0 5px 0;
+}
+
+.modal-dialog .modal-content .modal-body form .select-meet-place span {
+  font-size: 1.2rem;
+  position: relative;
+  margin: 5px 8px 0 0;
+}
+
+.modal-dialog .modal-content .modal-body form .select-meet-place select {
+  width: 80%;
+  border-radius: 5px;
+}
+
+.modal-dialog .modal-content .modal-body form textarea {
+  margin: 5px 0 5px 0;
+  padding: 5px;
+  width: 100%;
+  height: 84px;
+  max-height: 84px;
 }
 

@@ -23,16 +23,24 @@ class StoreScheduleRequest extends FormRequest
      */
     public function rules()
     {
-        dd($this->all());
         return [
             'title' => 'required',
             'date' => 'required',
-            'startime' => 'required',
-            'endtime' => 'required',
+            'from_time' => 'required',
+            'to_time' => 'required',
             'user_id' => 'required',
             'meet_url' => 'required',
             'location' => 'required',
-            'desc' => 'required'
+            'description' => 'required'
         ];
+    }
+
+
+    public function validationData()
+    {
+        $this->merge([
+            'date' => '2020-10-26 14:50:58'
+        ]);
+        return $this->all();
     }
 }
