@@ -72,7 +72,7 @@
           </select><br>
 
           
-          <textarea name="desc" id="desc" class="form-control" style="min-width: 100%" placeholder="Add description or attachments"></textarea>
+          <textarea name="description" id="desc" class="form-control" style="min-width: 100%" placeholder="Add description or attachments"></textarea>
           <br>
 
           <div>

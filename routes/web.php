@@ -27,9 +27,7 @@ Route::get('/eventedit', 'EventeditController@edit')->name('event_edit');
 
 Route::get('/eventedit/get-all-user', 'EventeditController@getAllUser')->name('eventEdit.getAllUser');
 
-Route::get('calendar', function(){
-    return view('calendar');
-});
+Route::get('calendar', 'ScheduleController@index')->name('schedule.index');
 
 Route::resource('blogs', 'BlogController');
 

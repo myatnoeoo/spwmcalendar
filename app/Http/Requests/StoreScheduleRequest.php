@@ -23,7 +23,6 @@ class StoreScheduleRequest extends FormRequest
      */
     public function rules()
     {
-        dd($this->all());
         return [
             'title' => 'required',
             'date' => 'required',
@@ -32,7 +31,7 @@ class StoreScheduleRequest extends FormRequest
             'user_id' => 'required',
             'meet_url' => 'required',
             'location' => 'required',
-            'desc' => 'required'
+            'description' => 'required'
         ];
     }
 }

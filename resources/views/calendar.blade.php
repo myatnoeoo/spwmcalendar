@@ -15,6 +15,7 @@
   $minutes = [15, 15, 15, 15];
 
 @endphp
+<x-modal.create />
 <div class="container-fluid calendar-container">
   <div class="row">
     <div class="col sidebar">

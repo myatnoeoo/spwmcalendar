@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Schedule;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Services\ScheduleService;
 use Illuminate\Support\Facades\Auth;
@@ -9,6 +11,10 @@ use App\Http\Requests\StoreScheduleRequest;
 
 class ScheduleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +22,12 @@ class ScheduleController extends Controller
      */
     public function index()
     {
-        //
+        $calendar_week = Schedule::whereDay('created_at', '=', date('d'))->get();
+        dd($calendar_week);
+        return view("calendar")->with([
+            'calendar_week' => $calendar_week,
+        ]);
+        
     }
 
     /**
@@ -26,7 +37,7 @@ class ScheduleController extends Controller
      */
     public function create(Request $request)
     {
-        dd($request->all());
+        
     }
 
     /**
