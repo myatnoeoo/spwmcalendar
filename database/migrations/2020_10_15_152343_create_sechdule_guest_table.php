@@ -17,8 +17,8 @@ class CreateSechduleGuestTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->unsignedBigInteger('sechdule_id');
-            $table->foreign('sechdule_id')->references('id')->on('sechdules')->onDelete('cascade');
+            $table->unsignedBigInteger('schedule_id');
+            $table->foreign('schedule_id')->references('id')->on('schedules')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://kit.fontawesome.com/yourcode.js"></script>
+  
+  <script src="https://kit.fontawesome.com/613129cfe8.js" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -32,7 +33,7 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          <form action="{{route('schedules.store')}}" method="POST">
+          <form action="{{route('schedules.store')}}" method="POST" id="schedule-form">
               @csrf
             <input type="text" name="title" placeholder="Enter Title" id="">
 
@@ -41,7 +42,7 @@
             <div class="select-time-div">
               <div class="select-time">
                 <span>From Time :</span>
-                <select name="" id="">
+                <select name="from_time" id="">
                   <option value="no-value">Select</option>
                   <option value="01:00">01:00</option>
                   <option value="02:00">02:00</option>
@@ -51,8 +52,8 @@
                 </select>
               </div>
               <div class="select-time">
-                <span>From Time :</span>
-                <select name="" id="">
+                <span>To Time :</span>
+                <select name="to_time" id="">
                   <option value="no-value">Select</option>
                   <option value="01:00">01:00</option>
                   <option value="02:00">02:00</option>
@@ -63,15 +64,25 @@
               </div>
             </div>
 
-            <input type="text" name="guset_users" placeholder="Choose Guest" id="">
+            <input type="text" placeholder="Choose Guest" id="add-guest" class="add-guest-input">
+            <div class="guest-user-list">
+              <ul class="guest-user-list-items"></ul>
+            </div>
+
+            <div class="added-guest-list">
+            </div>
 
             <div class="select-meet-place">
               <span>Location :</span>
-              <select name="" id="">
+              <select name="location" id="">
                 <option value="no-value" disabled selected hidden>Add rooms or location</option>
                 <option value="Meeting Room">Meeting Room</option>
                 <option value="Kitchen">Kitchen</option>
               </select>
+            </div>
+
+            <div class="meeting-url">
+              <input type="text" name="meet_url" placeholder="Enter Meet Url">
             </div>
 
             <textarea name="description" placeholder="Enter Description"></textarea>
@@ -91,10 +102,6 @@
 
 </body>
 <script type="text/javascript">
-  $(function () {
-      $('#datepicker').datepicker();
-  });
-
   $("#options").click(function(){
     let title = $("#title").val();
     let date = $("#date").val();
@@ -112,28 +119,41 @@
 
   $( document ).ready(function() {
     $( "#add-guest" ).focus(function() {
-      $( ".guest-list" ).css( "display", "block" );
+      $( ".guest-user-list" ).show();
         $.ajax({
           type:'GET',
           url:'/eventedit/get-all-user',
           success:function(data) {
-            $('.guest-list').empty();
+            $('.guest-user-list-items').empty();
             $.each(data, function( index, value ) {
-              $( ".guest-list" ).append(`<span class='guest-users' data-id="${value.id}">${value.name}</span>`);
+              $( ".guest-user-list-items" ).append(`<li class="guest-user-list-item" data-id="${value.id}" data-name="${value.name}">${value.name}</li>`);
             });
           }
         });
     });
 
-    // $( "#add-guest" ).blur(function() {
-    //   $( ".guest-list" ).css( "display", "none" );
-    // });
+    $(document).on('click', '.guest-user-list-item', function(){ 
+      let name = $(this).attr('data-name');
+      let id = $(this).attr('data-id');
+      $('.added-guest-list').append(`<span>${name}
+        <i class="fa fa-times remove-guest"></i>
+        <input type="text" hidden name="guest_user[]" value="${id}"/>
+        </span>`)
+      $( ".guest-user-list" ).hide();
+    });
 
-    $(document).on('click', '.guest-users', function(){ 
-      $('#add-guest').val($(this).text());
+    $(document).on('click', '.remove-guest', function(){ 
+      $(this).parent().remove();
+    })
 
-      $('#user_id').val($(this).attr('data-id'));
-    }); 
+    $(document).click(function(event) {
+      let targetClass = $(event.target).attr('class');
+      console.log(targetClass)
+      if(targetClass != "guest-user-list-item" && targetClass != "add-guest-input"){
+      $( ".guest-user-list" ).hide();
+      }
+    });
+
   });
 
 

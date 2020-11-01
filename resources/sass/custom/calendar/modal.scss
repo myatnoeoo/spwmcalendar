@@ -1,15 +1,11 @@
-.guest-list{
-    display: none;
-    span{
-        display:block;
-        text-align:left;
-    }
-}
 .modal-dialog{
     width: 350px !important;
     .modal-content{
         .modal-header{
             padding: 10px !important;
+            .close{
+                margin-top: -10px !important;
+            }
         }
         .modal-body{
             padding: 1rem !important;
@@ -21,11 +17,12 @@
                     border-radius: 10px;
                     padding: 4px 2px 4px 10px;
                     margin: 5px 0 5px 0;
+                    font-size: 1.4rem;
                 }
                 .select-time-div{
                     display: grid;
                     grid-template-columns: 50% 50%;
-                    column-gap: 1.3rem;
+                    column-gap: 3rem;
                     margin: 5px 0 5px 0;
                     .select-time{
                         display: flex;
@@ -39,7 +36,7 @@
                             height: 25px;
                             font-size: 1.3rem;
                             border-radius: 6px;
-                            background: #ebebff;
+                            background: transparent;
                         }
                     }
                 }
@@ -53,6 +50,7 @@
                     select{
                         width: 80%;
                         border-radius: 5px;
+                        background: transparent;
                     }
                 }
                 textarea{
@@ -62,7 +60,47 @@
                     height: 84px;
                     max-height: 84px;
                 }
+                .guest-user-list{
+                    display: none;
+                    position: absolute;
+                    background: #e6e1e1;
+                    z-index: 999;
+                    width: 95%;
+                    height: 42%;
+                    overflow: scroll;
+                    overflow-x: hidden;
+                    ul{
+                        margin: 0 !important;
+                        li{
+                            padding: 6px;
+                            cursor: pointer;
+                            &:hover{
+                                background: #d2d2da;
+                                list-style: none;
+                            }
+                        }
+                    }
+                }
+                .added-guest-list{
+                    background: #e8e8e8;
+                    font-size: 1.3rem;
+                    span{
+                        display: block;
+                        padding: 5px 0 5px 8px;
+                        &:hover{
+                            background:#d8d6d6;
+                        }
+                        i{
+                            float: right;
+                            margin: 3px 7px 0 0;
+                            cursor: pointer;
+                        }
+                    }
+                }
             }
+        }
+        .modal-footer{
+            padding: 4px !important;
         }
     }
 }

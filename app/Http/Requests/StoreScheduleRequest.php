@@ -31,7 +31,8 @@ class StoreScheduleRequest extends FormRequest
             'user_id' => 'required',
             'meet_url' => 'required',
             'location' => 'required',
-            'description' => 'required'
+            'description' => 'required',
+            'guest_user' => 'nullable'
         ];
     }
 
@@ -39,7 +40,8 @@ class StoreScheduleRequest extends FormRequest
     public function validationData()
     {
         $this->merge([
-            'date' => '2020-10-26 14:50:58'
+            // 'date' => '2020-10-26 14:50:58',
+            'user_id' => auth()->user()->id
         ]);
         return $this->all();
     }
