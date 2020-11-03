@@ -5,7 +5,7 @@
   $times = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
   $minutes = [15, 15, 15, 15];
 @endphp
-<x-modal.create />
+{{-- <x-modal.create /> --}}
 <div class="container-fluid calendar-container" data-toggle="modal" data-target="#myModal">
   <div class="row">
     <div class="col sidebar">
