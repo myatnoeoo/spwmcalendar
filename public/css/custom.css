@@ -39,7 +39,7 @@
 .calendar-container .sidebar .search {
   display: grid;
   grid-template-columns: 15% auto;
-  padding: 0.5rem 0 0 0;
+  padding: 553px 0 0 0;
 }
 
 .calendar-container .sidebar .search input {
@@ -189,10 +189,10 @@ label {
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.6px;
-  text-align: right;
+  text-align: left;
   font-weight: 700;
   font-size: 12px;
-  width: 100px;
+  width: 250px;
 }
 
 input,
@@ -254,5 +254,115 @@ input {
 .guest-list span {
   display: block;
   text-align: left;
+}
+
+
+.container-new {
+	height: 538px;
+	left: 50%;
+	margin: -952px 0 0 -224px;
+	position: absolute;
+	top: 50%;
+	width: 448px;
+}
+
+.calendar-new {
+	text-align: center;
+}
+
+.calendar-new header {
+	position: relative;
+}
+
+.calendar-new h2 {
+	text-transform: uppercase;
+}
+
+.calendar-new thead {
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.calendar-new tbody {
+	color: #7c8a95;
+}
+
+.calendar-new tbody td:hover {
+	border: 2px solid #00addf;
+}
+
+.calendar-new td {
+	border: 2px solid transparent;
+	border-radius: 50%;
+	display: inline-block;
+	height: 4em;
+	line-height: 4em;
+	text-align: center;
+	width: 4em;
+}
+
+.calendar-new .prev-month,
+.calendar-new .next-month {
+	color: #cbd1d2;
+}
+
+.calendar-new .prev-month:hover,
+.calendar-new .next-month:hover {
+	border: 2px solid #cbd1d2;
+}
+
+.current-day {
+	background: #00addf;
+	color: #f9f9f9;
+}
+
+.event {
+	cursor: pointer;
+	position: relative;
+}
+
+.event:after {
+	background: #00addf;
+	border-radius: 50%;
+	bottom: .5em;
+	display: block;
+	content: '';
+	height: .5em;
+	left: 50%;
+	margin: -.25em 0 0 -.25em;
+	position: absolute;
+	width: .5em;
+}
+
+.event.current-day:after {
+	background: #f9f9f9;
+}
+
+.btn-prev,
+.btn-next {
+	border: 2px solid #cbd1d2;
+	border-radius: 50%;
+	color: #cbd1d2;
+	height: 2em;
+	font-size: .75em;
+	line-height: 2em;
+	margin: -1em;
+	position: absolute;
+	top: 50%;
+	width: 2em;
+}
+
+.btn-prev:hover,
+.btn-next:hover {
+	background: #cbd1d2;
+	color: #f9f9f9;
+}
+
+.btn-prev {
+	left: 6em;
+}
+
+.btn-next {
+	right: 6em;
 }
 

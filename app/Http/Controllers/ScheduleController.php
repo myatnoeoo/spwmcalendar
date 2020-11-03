@@ -22,8 +22,9 @@ class ScheduleController extends Controller
      */
     public function index()
     {
-        $calendar_week = Schedule::whereDay('created_at', '=', date('d'))->get();
-        dd($calendar_week);
+        $startDate = Carbon::today();
+        $endDate = Carbon::today()->addDays(7);
+        $calendar_week = Schedule::whereBetween('created_at', [$startDate, $endDate])->get();
         return view("calendar")->with([
             'calendar_week' => $calendar_week,
         ]);
