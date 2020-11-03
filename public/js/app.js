@@ -49880,6 +49880,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
+<<<<<<< HEAD
 /*!*************************************************************!*\
   !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
   \*************************************************************/
@@ -49888,6 +49889,16 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__(/*! D:\xampp\htdocs\SPWMCalendar\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! D:\xampp\htdocs\SPWMCalendar\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+/*!***********************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/custom/custom.scss ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! /home/aungthiha/myatnoe/spwmcalendar/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/aungthiha/myatnoe/spwmcalendar/resources/sass/custom/custom.scss */"./resources/sass/custom/custom.scss");
+>>>>>>> be949c724f58a23c984a8a1d5b0eda651cb8235e
 
 
 /***/ })
