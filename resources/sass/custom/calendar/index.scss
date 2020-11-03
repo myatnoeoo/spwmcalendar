@@ -73,6 +73,7 @@
                         font-size: 0.9rem;
                         font-weight: normal;
                         line-height: 14px;
+                        display: inline;
                     }
                 }
             }
@@ -83,7 +84,7 @@
         padding: 1rem;
         .header{
             display: grid;
-            grid-template-columns: 20% auto;
+            grid-template-columns: 30% auto;
             height: 48px;
             border-bottom: 1px solid $sidebar-light;
             .swith-week{

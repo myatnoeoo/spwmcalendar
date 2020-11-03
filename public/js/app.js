@@ -49886,8 +49886,13 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! D:\xampp\htdocs\SPWMCalendar\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! D:\xampp\htdocs\SPWMCalendar\resources\sass\custom\custom.scss */"./resources/sass/custom/custom.scss");
+=======
+__webpack_require__(/*! /home/aungthiha/myatnoe/spwmcalendar/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/aungthiha/myatnoe/spwmcalendar/resources/sass/custom/custom.scss */"./resources/sass/custom/custom.scss");
+>>>>>>> a9e043442458362983a9aa74fb82a670d81c35a4
 
 
 /***/ })

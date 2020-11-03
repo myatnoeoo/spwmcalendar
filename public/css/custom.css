@@ -85,6 +85,7 @@
   font-size: 0.9rem;
   font-weight: normal;
   line-height: 14px;
+  display: inline;
 }
 
 .calendar-container .content {
@@ -94,7 +95,7 @@
 
 .calendar-container .content .header {
   display: grid;
-  grid-template-columns: 20% auto;
+  grid-template-columns: 30% auto;
   height: 48px;
   border-bottom: 1px solid gray;
 }
